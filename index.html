@@ -1,0 +1,277 @@
+<!-- 
+    パララックス効果きになる
+    https://attadesign.co.jp/
+    http://www.mcdonalds.co.jp/
+    http://www.phys.shimane-u.ac.jp/mochizuki_lab/QMIII2006_4.pdf
+    https://eman-physics.net/quantum/current.html
+-->
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Questrial|Montserrat|Noto+Sans+TC|Raleway|Roboto:700" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+        <script src="scripts/jquery-3.4.1.min.js"></script>
+        <style>
+            body {
+                /* background-color: rgb(188, 217, 255);
+                background: linear-gradient(-45deg, rgba(255, 255, 255, 0.37),rgba(255, 255, 255, 0.377)), url('img/image.jpg');
+                background-size: cover; */
+                margin: 0;
+                padding: 0;
+
+            }
+            nav {
+                width: 100%;
+                display: flex; 
+                justify-content: center;
+                position: fixed;
+                z-index: 1;
+            }
+            nav > table {
+                /* border-bottom: solid 1px black;
+                border-top-left-radius: 4px;
+                border-top-right-radius: 4px;
+                background-color: rgba(255, 255, 255, 0.781); */
+                border-bottom: solid 1px black;
+                padding: 0 20px;
+                width: 100%;
+                background-color: rgba(255, 255, 255, 0.9);
+            }
+            nav > table > tbody > tr {
+                display: flex;
+                justify-content: space-between;
+            }
+            .menu {
+                display: flex;
+                list-style-type: none;
+            }
+            .menu > li > a {
+                display: block;
+                margin-left: 25px;
+                text-decoration: none;
+                color: rgb(65, 65, 65);
+                font-size: 18px;
+                font-family: 'Montserrat', sans-serif;
+                position: relative;
+                padding: 5px 5px;
+                height: 100%;
+            }
+            .menu > li > a::after {
+                position: absolute;
+                bottom: 0px;
+                left: 0;
+                content: '';
+                width: 100%;
+                height: 2.5px;
+                background: rgb(56, 138, 233);
+                transform: scale(0, 1);
+                transform-origin: center;
+                transition: transform .3s;
+            }
+            .menu > li > a:hover {
+                color: rgb(121, 121, 200);
+            }
+            .menu > li > a:hover::after {
+                transform: scale(1, 1);
+            }
+            .logo {
+                font-family: 'Questrial', sans-serif;
+                font-size: 35px;
+                font-weight: 500;
+                color: rgb(91, 96, 121);
+            }
+            .content {
+                width: 100%;
+                padding-top: 87px;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .logo_image {
+                width: 100%;
+                height: 500px;
+                background: url('img/sky.jpg');
+                background-size: auto;
+                background-position: 0% 33%;
+                display: flex;
+                align-content: space-around;
+                flex-wrap: wrap;
+                position: relative;
+                z-index: 0;
+            }
+            .logo_image::before {
+                content: ''; 
+                position: absolute;
+                background: inherit;
+                filter: blur(2px), brightness(130%);
+                top: -0.1px;
+                bottom: -5px;
+                left: -0.1px;
+                right: -0.1px;
+                z-index: -1;
+            }
+            .shadow {
+                filter: drop-shadow(5px 5px 5px rgba(11, 14, 43, 0.438));
+            }
+            section > h1 {
+                position: relative;
+                display: inline-block;
+
+                font-size: 50px;
+                font-family: 'Noto Sans TC', sans-serif;
+                color: rgb(51, 51, 51);
+                font-weight: bold;
+                margin: 0 0;
+            }
+            section > h1::before, h1::after {
+                position: absolute;
+                display: inline-block;
+            }
+            section > h1::before {
+                content: '*/';
+                left: -50%; 
+            }
+            section > h1::after {
+                content: '/*';
+                right: -50%;
+            }
+            #page_top{
+                width: 100px;
+                height: 60px;
+                position: fixed;
+                right: 0;
+                bottom: 0;
+                background: #2369eb;
+                opacity: 0.6;
+                }
+                #page_top a{
+                position: relative;
+                display: block;
+                width: 100px;
+                height: 60px;
+                text-decoration: none;
+                }
+                #page_top a::before{
+                font-family: FontAwesome;
+                content: '\f102';
+                font-size: 25px;
+                color: #fff;
+                position: absolute;
+                width: 25px;
+                height: 25px;
+                top: -25px;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                margin: auto;
+                text-align: center;
+                }
+                #page_top a::after{
+                content: 'PAGE TOP';
+                font-size: 13px;
+                color: #fff;
+                position: absolute;
+                top: 30px;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                margin: auto;
+                text-align: center;
+                }
+        </style>
+        <script>
+            $(document).ready(function() {
+                $(".logo_image").css({
+                    'height': $(window).innerHeight() - $(".menu").height() - 70 + "px"
+                })
+                $(window).resize(function() {
+                    $(".logo_image").css({
+                        'height': $(window).innerHeight() - $(".menu").height() - 70 + "px"
+                    })
+                })
+                $(window).scroll(function() {
+
+                    var diffX = 100 * ($(this).scrollLeft()) / $(document).width()
+                    var diffY = 100 * ($(this).scrollTop()) / $(document).height()
+                    $(".logo_image").css({
+                        'background-position': (0 + diffX) + '% ' + (30 + diffY) + '%'
+                    })
+                })
+                $('a[href^="#"]').click(function() {
+                    var href= $(this).attr("href");
+                    var position = href == "#index" ? 0 : $(href).offset().top;
+                    $('body,html').animate({scrollTop:position}, 400, 'swing');
+                    return false;
+                });
+
+                var appear = false;
+                var pagetop = $('#page_top');
+                $(window).scroll(function () {
+                    if ($(this).scrollTop() > $(this).innerHeight() * 0.66) {
+                        pagetop.fadeIn();
+                    } else {
+                        pagetop.fadeOut();
+                    }
+                });
+                pagetop.click(function () {
+                    $('body, html').animate({ scrollTop: 0 }, 300);
+                    return false;
+                });
+            })
+        </script>
+        <title>Contrail</title>
+    </head>
+    <body>
+        <div id="page_top" style="display: none;"><a href="#"></a></div>
+        <nav>
+            <table>
+                <tbody>
+                    <tr>
+                        <td><div style="text-align: center;"><a href="#index" style="text-decoration: none;" class="logo">Contrail<br>Laboratory</a></div></td>
+                        <td>
+                            <ul class="menu">
+                                <li><a href="#1">Profile</a></li>
+                                <li><a href="#">Software / Simulation</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </nav>
+        <div class="content">
+            <div class="logo_image">
+                <span style="color: white; font-weight: 550; font-size: calc(80px + 0.25vw); padding-left: 50px;" class="shadow">
+                    Hi there!
+                    <br>
+                    I'm Contrail, a Physics student.
+                    <br>
+                </span>
+                <span style="bottom: 9%; position: absolute;" id="1"></span>
+            </div>
+            <section style="margin-top: 50px; text-align:center; width: 50%;">
+                <h1>about</h1>
+                <p style="font-size: 25px; font-family: 'Roboto', sans-serif; color: rgb(45, 45, 45);">
+                    Hello, my name is Contrail, a student of an university.
+                    Currently studying nuclear physics, especially on computer simulations of nuclei collisions.
+                    Fluent in English and Japanese, able to read and write in German.
+                </p>
+                <br>
+                <p style="font-size: 20px; font-family: 'Raleway', sans-serif; letter-spacing: 2px; color: rgb(45, 45, 45);">
+                    I've been coding since I was in an elementary school.
+                    I have experience with C#, C, C++, BASIC, VBASIC, PYTHON 2, PYTHON 3, FORTRAN 90/95, JAVA, HTML, JAVASCRIPT, CSS.
+                    Solid knowledge in Newtonian mechanics, Electromagnetism, Analytical mechanics, Quantum physics, Special relativity, Statistical mechanics, Fluid dynamics.
+                    I have deep interest in the concept of how this world is made, how nature works, how microscopic phenomena emerge as a large scale.
+                </p>
+                <h2 style="margin-top: 100px; font-family: 'Noto Sans TC'; color: rgb(51, 51, 51);">Here's some examples from my simulations!</h2>
+                <span style="font-family: Raleway;">Time development of Two dimensional wave</span>
+                <img src="img/wave.gif" style="border: solid 1px rgb(65, 65, 65); width: 50vw; height: 33vw;">
+                <br>
+                <span style="font-family: Raleway;">Rutherford Scattering (Scattering of electrons subjected to a proton)</span>
+                <img src="img/rutherford_scattering.png" style="border: solid 1px rgb(65, 65, 65); width: 35vw; height: 20vw;">
+            </section>
+        </div>
+    </body>
+</html>

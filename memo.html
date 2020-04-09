@@ -1,0 +1,77 @@
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>備忘録</title>
+        <script src="lib/jquery/jquery-3.4.1.min.js"></script>
+        <script src="lib/bootstrap-4.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="lib/bootstrap-4.4.1/css/bootstrap.min.css">
+        <style>
+            body {
+                overflow: vertical;
+            }
+
+            canvas {
+                position: fixed;
+                z-index: -1;
+            }
+
+            .jumbotron-extension {
+                position: relative;
+                background-color: rgba(236, 249, 255, 0.6);
+            }
+
+            .contents {
+                background-color: rgba(252, 252, 255, 0.8);
+                max-width: 50vw;
+                border: 0.5px solid rgb(57, 176, 255);
+            }
+
+            .image {
+                width: 100%;
+                border: 1px solid rgb(236, 236, 236);
+            }
+        </style>
+    </head>
+    <body>
+        <div id="particles-js"></div>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="index.html">Contrail</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="profile.html">Profile</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="programs.html">Programs</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="memo.html">備忘録</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+
+        <div class="jumbotron jumbotron-extension">
+            <div class="container">
+              <h1 class="display-4">備忘録</h1>
+              <p class="lead">またつまらない物を記してしまった...</p>
+            </div>
+        </div>
+
+        <div class="container jumbotron contents">
+            <h1 class="display-5">Wordpress?</h1>
+            <p class="lead">
+                Oh, that would be useful.
+            </p>
+        </div>
+        <script src="lib/particlejs/particles.js"></script>
+        <script src="lib/particlejs/app.js"></script>
+    </body>
+</html>

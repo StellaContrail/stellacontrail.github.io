@@ -1,6 +1,5 @@
 body {
     overflow: vertical;
-    padding-top: 50px;
 }
 
 canvas {
@@ -12,8 +11,12 @@ canvas {
     background-color: rgba(236, 249, 255, 0.6);
 }
 
+.jumbotron-extension {
+    margin-top: 50px;
+}
+
 .jumbotron-top {
-    height: 80vh;
+    height:85vh;
 }
 
 .contents {

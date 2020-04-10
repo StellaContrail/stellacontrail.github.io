@@ -8,8 +8,12 @@ canvas {
     z-index: -1;
 }
 
-.jumbotron-extension {
+.jumbotron-extension, .jumbotron-top {
     background-color: rgba(236, 249, 255, 0.6);
+}
+
+.jumbotron-top {
+    height: 80vh;
 }
 
 .contents {
@@ -19,4 +23,9 @@ canvas {
 
 img {
     max-width: 640px;
+}
+            
+.title {
+    position: relative;
+    top: 50%;
 }

@@ -1,0 +1,22 @@
+body {
+    overflow: vertical;
+    padding-top: 50px;
+}
+
+canvas {
+    position: fixed;
+    z-index: -1;
+}
+
+.jumbotron-extension {
+    background-color: rgba(236, 249, 255, 0.6);
+}
+
+.contents {
+    background-color: rgba(252, 252, 255, 0.8);
+    border: 0.5px solid rgb(57, 176, 255);
+}
+
+img {
+    max-width: 640px;
+}

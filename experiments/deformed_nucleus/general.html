@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>Deformed Nucleus</title>
+        <script src="../../lib/plotly/plotly_1.53.0.js"></script>
+        <script src="../../lib/jquery/jquery-3.4.1.min.js"></script>
+        <script src="../../lib/bootstrap-4.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="../../lib/bootstrap-4.4.1/css/bootstrap.min.css">
+        <script>
+            const N = 35;   // dimension
+            const dTheta = 2 * Math.PI / N; // angle step
+            // layout setting of the plot
+            const layout = {
+                autosize: false,
+                width: 600,
+                height: 600,
+                title: "Deformed Nucleus",
+                xaxis: {
+                    title: {text: "X"},
+                    range: [-3, 3]
+                },
+                yaxis: {
+                    title: {text: "Y"},
+                    range: [-3, 3]
+                }
+            };
+            var theta = []; // all discrete angles
+            for (let i = 0; i <= N; i++) {
+                theta.push(dTheta * i);
+            }
+            var alphaSliders = [];  // alpha slider elements
+            var alphaOutputs = [];  // alpha output elements
+            var radiusSlider;   // radius slider element
+            var radiusOutput;   // radius output element
+
+            // Returns decimal values of alphas
+            function getAlphaValues() {
+                let alphaArray = [];
+                for (let i = 0; i <= 3; i++) {
+                    alphaArray[i] = alphaOutputs[i].textContent;
+                }
+                alphaArray = alphaArray.map(x => parseFloat(x));
+                return alphaArray;
+            }
+
+            // Return decimal value of radius
+            function getRadiusValue() {
+                let r0 = radiusOutput.textContent;
+                return parseFloat(r0);
+            }
+
+            // Calculate radius pointing from origin to angle theta
+            function R(R0, theta, alpha){
+                return R0*(
+                    1 
+                    + alpha[0]
+                    + alpha[1]*Math.sqrt(3/(4*Math.PI))*Math.cos(theta)
+                    + alpha[2]*Math.sqrt(5/(16*Math.PI))*(3*Math.pow(Math.cos(theta), 2)-1)
+                    + alpha[3]*Math.sqrt(7/(16*Math.PI))*(5*Math.pow(Math.cos(theta), 3)-3*Math.cos(theta))
+                );
+            }
+
+            // Plot nucleus shape
+            function plot() {
+                let x = [];
+                let y = [];
+                for (let i = 0; i <= N; i++) {
+                    let _R = R(getRadiusValue(), theta[i], getAlphaValues());
+                    x.push(_R*Math.cos(theta[i]));
+                    y.push(_R*Math.sin(theta[i]));
+                }
+                Plotly.newPlot( "graph", [{x, y}], layout );
+            }
+
+            // Initialize all sliders and output values, and update it to the plot
+            function initialize() {
+                // Initialize sliders and outputs
+                for (let i = 0; i < alphaSliders.length; i++) {
+                    alphaSliders[i].value = 0;
+                    alphaOutputs[i].value = alphaSliders[i].value;
+                }
+                radiusSlider.value = 1;
+                radiusOutput.value = radiusSlider.value;
+                // Plot initial equidistant sphere
+                plot();
+            }
+
+            // Fetches all setting elements
+            function setElementReferences() {
+                alphaSliders = document.querySelectorAll("input[type='range']:not([id='radius'])");
+                alphaOutputs = document.querySelectorAll("output:not([id='r0'])");
+                radiusSlider = document.getElementById("radius");
+                radiusOutput = document.getElementById("r0");
+            }
+        </script>
+    </head>
+    <body onload="setElementReferences(); initialize();">
+        <div style="min-height: 100vh; display: flex; align-items: center;"><div class="container"><div class="row" style="align-items: center;">
+            <div id="graph" class="col" style="border: 1px solid lightgray;"></div>
+            <div class="col"><form>
+                    <fieldset>
+                        <legend>Radius</legend>
+                        <p><label>
+                            <var>R<sub>0</sup></var> : 
+                            <input type="range" id="radius" value="1" min="0" max="2" step="0.01" oninput="document.getElementById('r0').value=this.value; plot();" style="vertical-align:middle;">
+                            <output id="r0">1</output>
+                        </label></p>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Deformation parameters</legend>
+                        <p><label>
+                            <var>α<sub>00</sup></var> : 
+                            <input type="range" value="0" min="-1" max="1" step="0.01" oninput="document.getElementById('alpha0').value=this.value; plot();" style="vertical-align:middle;">
+                            <output id="alpha0">0</output>
+                        </label></p>
+                        <p><label>
+                            <var>α<sub>10</sup></var> : 
+                            <input type="range" value="0" min="-1" max="1" step="0.01" oninput="document.getElementById('alpha1').value=this.value; plot();" style="vertical-align:middle;">
+                            <output id="alpha1">0</output>
+                        </label></p>
+                        <p><label>
+                            <var>α<sub>20</sup></var> : 
+                            <input type="range" value="0" min="-1" max="1" step="0.01" oninput="document.getElementById('alpha2').value=this.value; plot();" style="vertical-align:middle;">
+                            <output id="alpha2">0</output>
+                        </label></p>
+                        <p><label>
+                            <var>α<sub>30</sup></var> : 
+                            <input type="range" value="0" min="-1" max="1" step="0.01" oninput="document.getElementById('alpha3').value=this.value; plot();" style="vertical-align:middle;">
+                            <output id="alpha3">0</output>
+                        </label></p>
+                    </fieldset>
+                    <input type="button" value="Initialize" onClick="initialize()">
+            </form></div>
+        </div></div></div>
+    </body>
+</html>

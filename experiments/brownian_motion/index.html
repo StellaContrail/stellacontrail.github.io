@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>Brownian motion</title>
+        <script src="../../lib/plotly/plotly_1.53.0.js"></script>
+        <script src="../../lib/jquery/jquery-3.4.1.min.js"></script>
+        <script src="../../lib/bootstrap-4.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="../../lib/bootstrap-4.4.1/css/bootstrap.min.css">
+        <script>
+            // Constant Values
+            const gamma = 0.01;
+            const D = 0.8;
+            const dt = 0.1;
+            const X0 = 0.0;
+            const layout = {
+                height: 600,
+                title: "Brownian motion (γ="+gamma+", D="+D+", X0="+X0+")",
+                xaxis: {
+                    title: {text: "T"},
+                    range: [0, 10.1]
+                },
+                yaxis: {
+                    title: {text: "X"},
+                    range: [-4, 4]
+                }
+            };
+
+            // Points
+            let t = [];
+            let x = [];
+
+            // Start plotting
+            var timer;
+            function start() {
+                timer = setInterval("calculate()", 10);
+            }
+
+            function rerun() {
+                if (t.length > 0) {
+                    t = [];
+                    x = [];
+                    start();
+                }
+            }
+
+            // Stop plotting
+            function stop() {
+                clearInterval(timer);
+            }
+
+            function autorange() {
+                Plotly.relayout('graph', {
+                    'xaxis.autorange': true
+                });
+            }
+
+            // Calculate
+            var X_temp;
+            function calculate() {
+                let X_new;
+                if (x.length > 0) {
+                    X_new = X(X_temp);
+                    X_temp = X_new;
+                } else {
+                    X_new = X(X0);
+                    X_temp = X_new;
+                }
+                t.push(dt * x.length);
+                x.push(X_new);
+                plot();
+                //autorange();
+
+                if (t[t.length-1] > 10) {
+                    stop();
+                }
+            }
+
+            // X
+            function X(X_old) {
+                W = Math.sqrt(-2*Math.log(Math.random())) * Math.sin(2*Math.PI*Math.random());
+                W = Math.sqrt(D*dt)*W;
+                return (1-gamma)*X_old + W;
+            }
+
+            // Plot
+            function plot() {
+                Plotly.newPlot( "graph", [{x:t, y:x}], layout );
+            }
+        </script>
+    </head>
+    <body onload="start()">
+        <div style="min-height: 100vh; display: flex; align-items: center;">
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center">
+                        <div id="graph" style="border: 1px solid lightgray;"></div>
+                        <input type="button" onclick="stop()" value="Stop">
+                        <input type="button" onclick="rerun()" value="Rerun">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

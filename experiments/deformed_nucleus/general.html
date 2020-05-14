@@ -6,6 +6,8 @@
         <script src="../../lib/plotly/plotly_1.53.0.js"></script>
         <script src="../../lib/jquery/jquery-3.4.1.min.js"></script>
         <script src="../../lib/bootstrap-4.4.1/js/bootstrap.min.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <link rel="stylesheet" href="../../lib/bootstrap-4.4.1/css/bootstrap.min.css">
         <script>
             const N = 35;   // dimension
@@ -96,9 +98,17 @@
         </script>
     </head>
     <body onload="setElementReferences(); initialize();">
-        <div style="min-height: 100vh; display: flex; align-items: center;"><div class="container"><div class="row" style="align-items: center;">
+        <div style="min-height: 100vh; display: flex; align-items: center;"><div class="container">
+            <div class="row text-center">
+                <div class="col">
+                    <h1>Deformed nucleus</h1>
+                    $$ R(\theta, \phi) = R_0 \left(1 + \alpha_{00} + \sum^\infty_{\lambda=1} \sum^\lambda_{\mu=-\lambda} \alpha^*_{\lambda \mu} Y_{\lambda \mu} (\theta, \phi)\right)$$
+                </div>
+            </div>
+            <div class="row" style="align-items: center;">
             <div id="graph" class="col" style="border: 1px solid lightgray;"></div>
-            <div class="col"><form>
+            <div class="col">
+                <form>
                     <fieldset>
                         <legend>Radius</legend>
                         <p><label>

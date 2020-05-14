@@ -6,6 +6,8 @@
         <script src="../../lib/plotly/plotly_1.53.0.js"></script>
         <script src="../../lib/jquery/jquery-3.4.1.min.js"></script>
         <script src="../../lib/bootstrap-4.4.1/js/bootstrap.min.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <link rel="stylesheet" href="../../lib/bootstrap-4.4.1/css/bootstrap.min.css">
         <script>
             const N = 25;   // dimension
@@ -127,7 +129,14 @@
         </script>
     </head>
     <body onload="setElementReferences(); initialize();">
-        <div style="min-height: 100vh; display: flex; align-items: center;"><div class="container"><div class="row" style="align-items: center;">
+        <div style="min-height: 100vh; display: flex; align-items: center;"><div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1>Deformed nucleus expressed with Hill-Wheeler coordinates</h1>
+                    $$ R(\theta, \phi) = R_0 \left\{ 1 + \beta \sqrt{\frac{5}{16\pi}} (\mathrm{cos}\gamma (3\mathrm{cos}^2\theta-1) + \sqrt{3}\mathrm{sin}\gamma \mathrm{sin}^2\theta \mathrm{cos}2\phi) \right\} $$
+                </div>
+            </div>
+            <div class="row" style="align-items: center;">
             <div class="col text-center">
                 <div id="graph" style="border: 1px solid lightgray;"></div>
                 <var>δR<sub>1</sub></var>=<span class="dr">0</span>,

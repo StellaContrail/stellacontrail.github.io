@@ -6,6 +6,8 @@
         <script src="../../lib/plotly/plotly_1.53.0.js"></script>
         <script src="../../lib/jquery/jquery-3.4.1.min.js"></script>
         <script src="../../lib/bootstrap-4.4.1/js/bootstrap.min.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <link rel="stylesheet" href="../../lib/bootstrap-4.4.1/css/bootstrap.min.css">
         <script>
             // Constant Values
@@ -92,6 +94,13 @@
     <body onload="start()">
         <div style="min-height: 100vh; display: flex; align-items: center;">
             <div class="container">
+                <div class="row">
+                    <div class="col text-center">
+                        <h1>Brownian Motion</h1>
+                        $$ \frac{dX(t)}{dt} = -\gamma X(t) + R(t) $$
+                        where \(R(t) dt\) is Gaussian process with variance of \(Ddt\)
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col text-center">
                         <div id="graph" style="border: 1px solid lightgray;"></div>

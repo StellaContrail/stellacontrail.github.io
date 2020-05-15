@@ -2,17 +2,82 @@
     <head>
         <meta charset="UTF-8">
         <title>Experiments</title>
-        <script src="lib/jquery/jquery-3.4.1.min.js"></script>
-        <script src="lib/bootstrap-4.4.1/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="lib/bootstrap-4.4.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/style.css">
+        <script src="../lib/jquery/jquery-3.4.1.min.js"></script>
+        <script src="../lib/bootstrap-4.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="../lib/bootstrap-4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-      <div class="content">
-        <a href="brownian_motion/index.html">Brown 運動</a><br>
-        <a href="deformed_nucleus/hill_wheeler.html">原子核の変形パラメータ依存性(Hill-Wheeler座標)</a><br>
-        <a href="deformed_nucleus/general.html">原子核の変形パラメータ依存性(多重極)</a>
+      <div class="content text-center">
+        <nav class="navbar navbar-dark bg-dark text-center">
+          <a class="nav-link navbar-brand" href="../index.html" style="z-index: 1;">Contrail</a>
+          <span class="navbar-brand font-weight-lighter" style="position: absolute; margin: auto; left:0; right:0;">Experimental Programs</span>
+        </nav>
+        <br>
+
+        <p class="font-weight-lighter h4">
+          A place for too simple programs to create a Git repository for, and those which are still in development.
+          <br>
+          The variety of the programs ranges from simple tools to complex numerical solver.
+          <br>
+          The list will be updated occasionally, with short description and an image.
+        </p>
+        <button type="button" class="btn btn-outline-primary" onClick="window.location.hash = 'list'">Go to the program list</button>
+        <br>
+        <br>
+        <figure class="figure">
+          <img src="img/vortices_splitting.png" class="img-fluid" alt="Vortices Splitting Density and Current" style="border: 1px solid #979797;">
+          <img src="img/vortices_splitting_phase.png" class="img-fluid" alt="Vortices Splitting Phase" style="border: 1px solid #979797;">
+          <figcaption class="figure-caption text-right">
+            Example: Vortices splitting in rotating superfluid (Left: Density Distribution & Flux current field, Right: Phase Distribution)
+          </figcaption>
+        </figure>
+        <br>
+
+        <hr>
+
+        <br>
       </div>
+      
+      <div class="content-fluid text-center" id="list">
+        <div class="row justify-content-center pt-5">
+
+          <div class="col-sm-3">
+            <div class="card" style="width: 23rem;">
+              <img src="img/brown.png" class="card-img-top" alt="Brownian motion">
+              <div class="card-body">
+                <h5 class="card-title">Brownian Motion</h5>
+                <p class="card-text">One dimensional simulation to demonstrate how small particle behaves in water.</p>
+                <a href="brownian_motion/index.html" class="btn btn-primary">Try this !</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-sm-3">
+            <div class="card" style="width: 23rem;">
+              <img src="img/hill_wheeler.png" class="card-img-top" alt="3D Deformed Nucleus">
+              <div class="card-body">
+                <h5 class="card-title">3D Deformed Nucleus</h5>
+                <p class="card-text">Three dimensional simulation of deformed nucleus expressed in Hill-Wheeler coordinates.</p>
+                <a href="deformed_nucleus/hill_wheeler.html" class="btn btn-primary">Try this !</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-sm-3">
+            <div class="card" style="width: 23rem;">
+              <img src="img/deformed.png" class="card-img-top" alt="2D Deformed Nucleus">
+              <div class="card-body">
+                <h5 class="card-title">2D Deformed Nucleus</h5>
+                <p class="card-text">Two dimensional simulation of deformed nucleus with deformation parameters.</p>
+                <a href="deformed_nucleus/general.html" class="btn btn-primary">Try this !</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <br>
     </body>
 </html>

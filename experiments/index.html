@@ -1,83 +1,85 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <title>Experiments</title>
+        <title>Portfolio</title>
         <script src="../lib/jquery/jquery-3.4.1.min.js"></script>
         <script src="../lib/bootstrap-4.4.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="../lib/bootstrap-4.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/style.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-      <div class="content text-center">
-        <nav class="navbar navbar-dark bg-dark text-center">
-          <a class="nav-link navbar-brand" href="../index.html" style="z-index: 1;">Contrail</a>
-          <span class="navbar-brand font-weight-lighter" style="position: absolute; margin: auto; left:0; right:0;">Experimental Programs</span>
-        </nav>
-        <br>
+        <div id="particles-js"></div>
 
-        <p class="font-weight-lighter h4">
-          A place for too simple programs to create a Git repository for, and those which are still in development.
-          <br>
-          The variety of the programs ranges from simple tools to complex numerical solver.
-          <br>
-          The list will be updated occasionally, with short description and an image.
-        </p>
-        <button type="button" class="btn btn-outline-primary" onClick="window.location.hash = 'list'">Go to the program list</button>
-        <br>
-        <br>
-        <figure class="figure">
-          <img src="img/vortices_splitting.png" class="img-fluid" alt="Vortices Splitting Density and Current" style="border: 1px solid #979797;">
-          <img src="img/vortices_splitting_phase.png" class="img-fluid" alt="Vortices Splitting Phase" style="border: 1px solid #979797;">
-          <figcaption class="figure-caption text-right">
-            Example: Vortices splitting in rotating superfluid (Left: Density Distribution & Flux current field, Right: Phase Distribution)
-          </figcaption>
-        </figure>
-        <br>
-
-        <hr>
-
-        <br>
-      </div>
-      
-      <div class="content-fluid text-center" id="list">
-        <div class="row justify-content-center pt-5">
-
-          <div class="col-sm-3">
-            <div class="card" style="width: 23rem;">
-              <img src="img/brown.png" class="card-img-top" alt="Brownian motion">
-              <div class="card-body">
-                <h5 class="card-title">Brownian Motion</h5>
-                <p class="card-text">One dimensional simulation to demonstrate how small particle behaves in water.</p>
-                <a href="brownian_motion/index.html" class="btn btn-primary">Try this !</a>
-              </div>
-            </div>
-          </div>
+        <div class="d-flex align-items-start h-100" style="background-color: rgba(255, 255, 255, 0.781); border-bottom: solid 0.5px rgba(77, 77, 77, 0.1);">
           
-          <div class="col-sm-3">
-            <div class="card" style="width: 23rem;">
-              <img src="img/hill_wheeler.png" class="card-img-top" alt="3D Deformed Nucleus">
-              <div class="card-body">
-                <h5 class="card-title">3D Deformed Nucleus</h5>
-                <p class="card-text">Three dimensional simulation of deformed nucleus expressed in Hill-Wheeler coordinates.</p>
-                <a href="deformed_nucleus/hill_wheeler.html" class="btn btn-primary">Try this !</a>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-sm-3">
-            <div class="card" style="width: 23rem;">
-              <img src="img/deformed.png" class="card-img-top" alt="2D Deformed Nucleus">
-              <div class="card-body">
-                <h5 class="card-title">2D Deformed Nucleus</h5>
-                <p class="card-text">Two dimensional simulation of deformed nucleus with deformation parameters.</p>
-                <a href="deformed_nucleus/general.html" class="btn btn-primary">Try this !</a>
-              </div>
-            </div>
-          </div>
+          <div class="content container-xl h-100">
+            
+            <ul class="nav justify-content-start mt-4">
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html">Top</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../profile.html">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../programs.html">Programs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="experiments/index.html">Experiments</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../memo.html">備忘録</a>
+              </li>
+            </ul>
 
-        </div>
+
+            <div class="d-flex flex-wrap align-items-start h-75">
+              <h1 class="display-3 mt-5">Experiments</h1>
+
+              <div class="d-flex flex-wrap justify-content-between container-xl">
+                <div class="card border-info" style="width: 250px;">
+                  <img src="img/brown.png" class="card-img-top img-fluid">
+                  <div class="card-body">
+                    <h5 class="card-title" style="font-weight: bold;"><a href="brownian_motion/index.html">Brownian Motion</a></h5>
+                    <p class="card-text">
+                      Simulation of Brownian motion
+                    </p>
+                  </div>
+                </div>
+                <div class="card border-info" style="width: 250px;">
+                  <img src="img/deformed.png" class="card-img-top img-fluid">
+                  <div class="card-body">
+                    <h5 class="card-title" style="font-weight: bold;"><a href="deformed_nucleus/general.html">Deformed nucleus shape (2D)</a></h5>
+                    <p class="card-text">
+                      Deformed nucleus in 2D
+                    </p>
+                  </div>
+                </div>
+                <div class="card border-info" style="width: 250px;">
+                  <img src="img/hill_wheeler.png" class="card-img-top img-fluid">
+                  <div class="card-body">
+                    <h5 class="card-title" style="font-weight: bold;"><a href="deformed_nucleus/hill_wheeler.html">Deformed nucleus shape (3D)</a></h5>
+                    <p class="card-text">
+                      Deformed nucleus expressed with Hill-Wheeler coordinates
+                    </p>
+                  </div>
+                </div>
+                <div class="card border-info" style="width: 250px;">
+                  <img src="../img/quon_code.png" class="card-img-top img-fluid">
+                  <div class="card-body">
+                    <h5 class="card-title" style="font-weight: bold;">QM Library</h5>
+                    <p class="card-text">
+                      C++ Library for first principle calculation.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
       </div>
-      <br>
+
+        <script src="../lib/particlejs/particles.js"></script>
+        <script src="../lib/particlejs/app.js"></script>
     </body>
 </html>

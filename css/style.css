@@ -1,34 +1,19 @@
-body {
-    overflow: vertical;
-}
-
 canvas {
     position: fixed;
     z-index: -1;
 }
 
-.jumbotron-extension, .jumbotron-top {
-    background-color: rgba(236, 249, 255, 0.6);
-}
-
-.jumbotron-extension {
-    margin-top: 50px;
-}
-
-.jumbotron-top {
-    height:85vh;
-}
-
-.contents {
-    background-color: rgba(252, 252, 255, 0.8);
-    border: 0.5px solid rgb(57, 176, 255);
-}
-
-img {
-    max-width: 640px;
-}
-            
 .title {
-    position: relative;
-    top: 50%;
+    position: absolute; 
+    left: 20vw; 
+    bottom: 200px;
+}
+
+.content {
+    /*position: absolute;
+    left: 20vw;
+    bottom: 50px;
+    */
+    
+
 }

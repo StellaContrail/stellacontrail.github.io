@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>20200710</title>
+        <link rel="stylesheet" href="https://latex.now.sh/style.min.css" />
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <h3>Problem</h3>
+        <div style="border: solid 1px black; border-radius: 5px; padding-left: 15px;">
+            Find sets of \(a, b, c, d \in {\rm I\!N} \) which satisfy the following relation
+            $$ \frac{a}{b} + \frac{c}{d} = \frac{a+c}{b+d} $$
+        </div>
+        <br>
+        Let us first assume that there's any set which satisfies the equation.
+        If we solve the equation for a parameter, say \( b \), the equation reduces to
+        \begin{eqnarray}
+            \frac{ad+cb}{bd} &=& \frac{a+c}{b+d} \\
+            (ad+cb)(b+d) &=& (a+c)bd \\
+            ad^2 + cb^2 &=& 0 \\
+            b^2 &=& - \frac{a}{c} d^2
+        \end{eqnarray}
+        Therefore, the variable \(b \) can take the two values,
+        \begin{equation}
+            b = \pm i \sqrt{\frac{a}{c}} d
+        \end{equation}
+        which contradicts our first assumption since the right hand side always gives imaginary value while the left hand side has to be real.
+        <h3>Conclusion</h3>
+        As long as we consider in \({\rm I\!N}\) space, there's no solutions for 
+        $$ \frac{a}{b} + \frac{c}{d} = \frac{a+c}{b+d} $$
+        to be hold.
+        <br>
+        However, if we consider the case which variables are in \({\rm I\!R}\) space, there exist solutions for
+        \begin{equation}
+            b = \pm i \sqrt{\frac{a}{c}} d
+        \end{equation}
+        The left hand side is again, a real number.
+        The right hand side has an imaginary unit, however, the square root part can also give an imaginary unit since \(a\) and \(c\) are in \({\rm I\!R}\).
+    </body>
+</html>

@@ -1,25 +1,25 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <title>Profile</title>
+        <title>Portfolio</title>
         <script src="lib/jquery/jquery-3.4.1.min.js"></script>
         <script src="lib/bootstrap-4.4.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="lib/bootstrap-4.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
         <div id="particles-js"></div>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-            <a class="navbar-brand" href="index.html">Contrail</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-                <li class="nav-item active">
-                  <a class="nav-link" href="profile.html">Profile</a>
+        <div class="d-flex align-items-start h-100" style="background-color: rgba(255, 255, 255, 0.781); border-bottom: solid 0.5px rgba(77, 77, 77, 0.1);">
+          
+            <div class="content container-xl h-100">
+              
+              <ul class="nav justify-content-start mt-4">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Top</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="profile.html">Profile</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="programs.html">Programs</a>
@@ -30,44 +30,27 @@
                 <li class="nav-item">
                   <a class="nav-link" href="memo.html">備忘録</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact</a>
-                </li>
               </ul>
-            </div>
-          </nav>
 
-        <div class="jumbotron jumbotron-extension">
-            <div class="container">
-              <h1 class="display-4">Profile</h1>
-              <p class="lead">what is this dude even doing for life</p>
+
+              <div class="d-flex flex-wrap align-items-center h-75 justify-content-around">
+                <div class="ml-4">
+                  <h1 class="display-3 mb-2">Profile</h1>
+                  <img src="https://avatars3.githubusercontent.com/u/30793677" class="ml-3 mb-4">
+                  <p class="lead"><span class="font-weight-bold">Language:</span> JP/English/C#/Fortran2008/C++</p>
+                  <p class="lead"><span class="font-weight-bold">Field:</span> Computational Physics</p>
+                </div>
+                
+                <figure style="text-align: center; color: rgb(75, 75, 75);">
+                  <img src="img/wave.gif" class="img-fluid">
+                  <figcaption>
+                    This is what Computational Physics Student does in case you're wondering. (fig. 3D Wave Dynamics)
+                  </figcaption>
+                </figure>
+              </div>
             </div>
         </div>
 
-        <div class="container jumbotron contents">
-            <h1 class="display-5">Who is this guy?</h1>
-            <p class="lead">
-                A graduated student studying Numerical Simulation (Physics)
-                <br>
-                Researching in how superfluid behaves by simulating its dynamics
-            </p>
-            <div class="container text-center">
-                <img src="img/superfluid.gif" class="img-fluid">
-                <p class="text-muted">Simulation of Stirred Superfluid</p>
-            </div>
-            <br>
-            <h1 class="display-5">Programming Skill?</h1>
-            <p class="lead">
-                I've been in love with C# for almost a decade.
-                <br>
-                Decent experience with C/C++/Fortran/VB/Javascript/Python as well.
-            </p>
-            <br>
-            <h1 class="display-5">Languages?</h1>
-            <p class="lead">
-                Japanese, English, and a little bit of Germany.
-            </p>
-        </div>
         <script src="lib/particlejs/particles.js"></script>
         <script src="lib/particlejs/app.js"></script>
     </body>

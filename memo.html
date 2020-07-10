@@ -1,23 +1,23 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <title>備忘録</title>
+        <title>Portfolio</title>
         <script src="lib/jquery/jquery-3.4.1.min.js"></script>
         <script src="lib/bootstrap-4.4.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="lib/bootstrap-4.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
         <div id="particles-js"></div>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-            <a class="navbar-brand" href="index.html">Contrail</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
+        <div class="d-flex align-items-start h-100" style="background-color: rgba(255, 255, 255, 0.781); border-bottom: solid 0.5px rgba(77, 77, 77, 0.1);">
+          
+            <div class="content container-xl h-100">
+              
+              <ul class="nav justify-content-start mt-4">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Top</a>
+                </li>
                 <li class="nav-item">
                   <a class="nav-link" href="profile.html">Profile</a>
                 </li>
@@ -27,29 +27,35 @@
                 <li class="nav-item">
                   <a class="nav-link" href="experiments/index.html">Experiments</a>
                 </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="memo.html">備忘録</a>
-                </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact</a>
+                  <a class="nav-link disabled" href="memo.html">備忘録</a>
                 </li>
               </ul>
-            </div>
-          </nav>
 
-        <div class="jumbotron jumbotron-extension">
-            <div class="container">
-              <h1 class="display-4">備忘録</h1>
-              <p class="lead">Before taking three steps to forget...</p>
+
+              <div class="h-75 mt-5">
+                <h1 class="display-3 mb-2">memo</h1>
+
+                <dl class="row ml-3 mt-4">
+                  <dt class="col-sm-3">Mathematics</dt>
+                  <dd class="col-sm-9">
+                    <a href="memo/20200710.html">[20200710] about fraction</a>
+                  </dd>
+                
+                  <dt class="col-sm-3">Physics</dt>
+                  <dd class="col-sm-9">None</dd>
+                
+                  <dt class="col-sm-3">Programming</dt>
+                  <dd class="col-sm-9">None</dd>
+                
+                  <dt class="col-sm-3">LaTeX</dt>
+                  <dd class="col-sm-9">None</dd>
+                </dl>
+              </div>
+              
             </div>
         </div>
 
-        <div class="container jumbotron contents">
-            <h1 class="display-5">Wordpress?</h1>
-            <p class="lead">
-                Oh, that would be useful.
-            </p>
-        </div>
         <script src="lib/particlejs/particles.js"></script>
         <script src="lib/particlejs/app.js"></script>
     </body>

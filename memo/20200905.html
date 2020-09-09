@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>多重極展開</title>
+        <link rel="stylesheet" href="https://latex.now.sh/style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                renderMathInElement(document.body, {
+                    delimiters: [
+                        {left: "$$", right: "$$", display: true},
+                        {left: "$", right: "$", display: false},
+                        {left: "\\(", right: "\\)", display: false},
+                        {left: "\\[", right: "\\]", display: true}
+                    ]
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1>多重極展開</h1>
+        <div style="width: 100%; text-align: center; font-size: 1.5rem; color: #808080;">Multipole expansion</div>
+        <h2>はじめに</h2>
+        <p>
+            　多重極展開は電磁気学において基本的な概念であるが、導出までの式変形のみが取り扱われ、肝心の内容については語られないことが多いように思う。
+            本記事の目的は、最も簡単な導出法である点電荷から多重極展開を行い、その結果に対して定性的な説明を与えることである。
+            <br>
+            　以下で詳しく導出から説明していくが、「多重極展開によって一般的な電荷分布の電位が対称性を持った電荷分布で展開できる」ことが結論である。
+        </p>
+        <h2>導出</h2>
+        <h3>状況設定</h3>
+        <p>
+            　原点から \( \vec{r}' \) だけ離れた点電荷を仮定する。
+            <img src="img/multipole_expansion.svg">
+            この点電荷が作るポテンシャル（電位）を \( \vec{r} \) の点 \( P \) において計測する。
+            ここで \( \theta \) はこれらのベクトル間が成す角度である。
+        </p>
+        <h3>計算</h3>
+        <p>
+            　静電ポテンシャルはクーロンの法則より次のように定義される。
+            \[
+                V(\vec{r}) = \frac{q}{4 \pi \epsilon_0} \frac{1}{|\vec{r} - \vec{r}'|}
+            \]
+            多極子展開を行うには、この式を \( r \) について展開する。
+            <br>
+            　簡単のため、まず距離に依存している部分だけ抜き出して整理する。
+            \[
+            \begin{aligned}
+                \frac{1}{|\vec{r} - \vec{r}'|} &= \left\{ (\vec{r} - \vec{r}')^2 \right\}^{-1/2} \\
+                &= (r^2 + r'^2 - 2rr'\cos\theta)^{-1/2}
+            \end{aligned}
+            \]
+            これはルジャンドル多項式の母関数の形そのものであり、距離に依存している部分はルジャンドル多項式によって展開できることを意味する。
+            <br>
+            　このことをもう少し具体的に式に表す。先述した式をさらに整理することによって
+            \[
+            \begin{aligned}
+                (r^2 + r'^2 - 2rr'\cos\theta)^{-1/2} &= \frac{1}{r} \left\{ 1 + \left(\frac{r'}{r}\right)^2 - 2\left(\frac{r'}{r}\right)\cos\theta \right\}^{-1/2} \\
+                &= \frac{1}{r} \sum^\infty_{n=0} P_n(\cos\theta) \left(\frac{r'}{r}\right)^n
+            \end{aligned}
+            \]
+            を得る。従って静電ポテンシャルは最終的にルジャンドル多項式を用いて次の形で表される。
+            \[
+                V(\vec{r}) = \frac{q}{4 \pi \epsilon_0} \sum^\infty_{n=0} P_n(\cos\theta) \frac{r'^n}{r^{n+1}}
+            \]
+            <br>
+            このべき級数を明示的に展開することによって次の展開式を得る。
+            \[
+                V(\vec{r}) = \frac{q}{4 \pi \epsilon_0} \left\{ \frac{1}{r} + \frac{r'}{r^2}\cos\theta + \frac{1}{2}\frac{r'^2}{r^3}(3\cos^2\theta-1) + O\left(\frac{1}{r^4}\right) \right\}
+            \]
+            この括弧内一項目は単極子(monopole)、二項目は双極子(dipole)、三項目は四重極子(quadrupole)に対応している。
+            実際はこのまま八重極子(octopole)・・・と永遠に続いていく。
+        </p>
+        <h2>考察</h2>
+        <p>
+            すなわち、<strong>「任意の場所にある点電荷が作る電位」は「原点中心の様々な多重極子が作る電位の和」によって近似することが出来るのである。</strong>
+            <br>
+            　ここで注意したいのが<strong>出発点は点電荷だからといって、単極子だけが有効ではないということである。</strong>
+            展開後の各項が作り出すポテンシャルは「原点中心」に置かれたものであり、点電荷の場合それは原点そのものであり今回の状況設定に一致しない。
+            これは \( r' \to 0 \) として原点中心に点電荷が置かれているとすれば明らかである。
+            \[
+                V(\vec{r}) \xrightarrow[r' \to 0]{} \frac{q}{4 \pi \epsilon_0} \frac{1}{r}
+            \]
+            <br>
+            　ところで、遠方 \( r \to \infty \)で観測した場合はどのような電位が得られるだろうか。
+            そのような場合は \( r'/r \ll 1 \) に対応しており、括弧内第一項がdominantになり単極子に近似することが出来る。
+            十分遠方から原点から少しズレている点電荷はほとんど原点中心に位置しているとみなせるため、この結果は直感的に理解しやすい。
+            \[
+            \begin{aligned}
+                V(\vec{r}) = \frac{q}{4 \pi \epsilon_0} \frac{1}{r} && (r'/r \ll 1)
+            \end{aligned}
+            \]
+        </p>
+        <p>
+            　今回は電荷の分布を点であると仮定したが、現実では分布しているはずである。
+            そのような場合において電荷を電荷密度 \( \rho(\vec{r}') \) によって表現するのが一般的であり、実際にそのようにして解くことによって
+            分布している電荷に対する電位の展開の式が得られる。
+            しかしそのような場合において展開後の各項の計算はより複雑になり、テンソルが入ってくる。
+            \[
+                V(\vec{r}) = \frac{q}{4 \pi \epsilon_0} \left[ \frac{1}{r} + \frac{\vec{r}\cdot\vec{p}}{r^3} + \frac{\vec{r}^T Q \vec{r}}{r^5} + \cdots \right]
+            \]
+        </p>
+        <hr>
+        <a href="../memo.html">Go back</a>
+    </body>
+</html>

@@ -1,116 +1,84 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>Portfolio</title>
-      <script src="lib/jquery/jquery-3.4.1.min.js"></script>
-      <script src="lib/bootstrap-4.4.1/js/bootstrap.min.js"></script>
-      <link rel="stylesheet" href="lib/bootstrap-4.4.1/css/bootstrap.min.css">
-      <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-      <div id="particles-js"></div>
-
-      <div class="d-flex align-items-start" style="background-color: rgba(255, 255, 255, 0.781); border-bottom: solid 0.5px rgba(77, 77, 77, 0.1);">
-        
-        <div class="content container-xl d-flex flex-column justify-content-between">
-          
-          <nav class="navbar navbar-expand-sm navbar-light">
-            <button class="navbar-toggler ml-auto text-center" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              menu <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mt-4">
-                <li class="nav-item">
-                  <a class="nav-link text-primary" href="index.html">Top</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-primary" href="profile.html">Profile</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" href="software.html">Software</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-primary" href="simulations/index.html">Simulations</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-primary" href="memo.html">備忘録</a>
-                </li>
-              </ul>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Software</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+      <div id="particles-js" style="position: absolute;"></div>
+      <div class="overlay-pages">
+        <div class="header">
+          <ul class="nav">
+            <li>
+              <a href="index.html">Top</a>
+            </li>
+            <li>
+              <a href="profile.html">Profile</a>
+            </li>
+            <li>
+              <span class="disabled">Software</span>
+            </li>
+            <li>
+              <a href="simulations/index.html">Simulations</a>
+            </li>
+            <li>
+              <a href="memo.html">備忘録</a>
+            </li>
+          </ul>
+          <span class="title">Software</span>
+        </div>
+      </div>
+      <div class="content">
+        <div class="cards">
+          <div class="card">
+            <a href="https://github.com/StellaContrail/Amazon-Price-Recorder"></a>
+            <div class="card-img">
+              <img src="img/amazon.png">
             </div>
-          </nav>
-
-
-          <div class="d-flex flex-column align-items-between justify-content-between">
-            <h1 class="display-3 mt-2 mb-4">Software</h1>
-
-            <div class="d-flex flex-wrap flex-row justify-content-around container-xl">
-              <div class="card border-info mb-2" style="width: 250px;">
-                <img src="img/amazon.png" class="card-img-top img-fluid">
-                <div class="card-body">
-                  <h5 class="card-title" style="font-weight: bold;"><a href="https://github.com/StellaContrail/Amazon-Price-Recorder">Amazon Price Watchdog</a></h5>
-                  <p class="card-text">Keep an eye for your favorite products</p>
-                </div>
-              </div>
-              
-              <div class="card border-info mb-2" style="width: 250px;">
-                <img src="https://raw.githubusercontent.com/StellaContrail/GIFPlayer/master/images/sample.png" class="card-img-top img-fluid">
-                <div class="card-body">
-                  <h5 class="card-title" style="font-weight: bold;"><a href="https://github.com/StellaContrail/GIFPlayer">GIF Player</a></h5>
-                  <p class="card-text">GIF Player with frame-by-frame playback feature</p>
-                </div>
-              </div>
-          
-              <div class="card border-info mb-2" style="width: 250px;">
-                <img src="img/comiket.png" class="card-img-top img-fluid">
-                <div class="card-body">
-                  <h5 class="card-title" style="font-weight: bold;"><a href="https://github.com/StellaContrail/comiket-participants-finder">Comiket Participants Finder</a></h5>
-                  <p class="card-text">Find Comiket participants from your followings</p>
-                </div>
-              </div>
-
-              <div class="card border-info mb-2" style="width: 250px;">
-                <img src="img/beatstream.gif" class="card-img-top img-fluid">
-                <div class="card-body">
-                  <h5 class="card-title" style="font-weight: bold;"><a href="https://github.com/StellaContrail/beatstream-like-game">Rhythm Game</a></h5>
-                  <p class="card-text">
-                    Beatstream-like music game
-                  </p>
-                </div>
-              </div>
-              
-              <div class="card border-info mb-2" style="width: 250px;">
-                <img src="img/myplot.png" class="card-img-top img-fluid">
-                <div class="card-body">
-                  <h5 class="card-title" style="font-weight: bold;"><a href="https://github.com/StellaContrail/myplot">MyPlot</a></h5>
-                  <p class="card-text">Extremely Lightweight Plot Javascript library</p>
-                </div>
-              </div>
-
-              <div class="card border-info mb-2" style="width: 250px;">
-                <img src="img/markov.png" class="card-img-top img-fluid">
-                <div class="card-body">
-                  <h5 class="card-title" style="font-weight: bold;"><a href="https://github.com/StellaContrail/Markov">Markov chain</a></h5>
-                  <p class="card-text">Generate random sentences with Markov chain</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="d-inline-flex media position-relative bg-light ml-auto mt-3 mb-5" style="border-radius: 3px; border: solid 0.5px lightgray;">
-              <img src="https://avatars3.githubusercontent.com/u/30793677" class="mr-3" style="height: 100px;">
-              <div class="media-body">
-                <h5 class="mt-3 mr-3">More on Github</h5>
-                <a href="https://github.com/StellaContrail" class="stretched-link">@StellaContrail</a>
-              </div>
+            <div class="card-content">
+              <span class="card-title">Amazon Price Tracker</span>
+              <p class="card-body">Watchdog for Amazon products price drops, and restocks.</p>
             </div>
           </div>
 
-        </div>
-    </div>
+          <div class="card">
+            <a href="https://github.com/StellaContrail/GIFPlayer"></a>
+            <div class="card-img">
+              <img src="https://raw.githubusercontent.com/StellaContrail/GIFPlayer/master/images/sample.png">
+            </div>
+            <div class="card-content">
+              <span class="card-title">GIF Player</span>
+              <p class="card-body">A Simple and Fast Player for animated GIF image.</p>
+            </div>
+          </div>
 
+          <div class="card">
+            <a href="https://github.com/StellaContrail/comiket-participants-finder"></a>
+            <div class="card-img">
+              <img src="img/comiket.png">
+            </div>
+            <div class="card-content">
+              <span class="card-title">Comiket Participants Finder</span>
+              <p class="card-body">Find Comiket participants from your Twitter followings</p>
+            </div>
+          </div>
+      
+          <div class="card">
+            <a href="https://github.com/StellaContrail/beatstream-like-game"></a>
+            <div class="card-img">
+              <img src="img/beatstream.gif">
+            </div>
+            <div class="card-content">
+              <span class="card-title">Rhythm Game</span>
+              <p class="card-body">Beatstream-like music game </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
       <script src="lib/particlejs/particles.js"></script>
       <script src="lib/particlejs/app.js"></script>
-  </body>
+    </body>
 </html>

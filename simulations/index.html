@@ -1,142 +1,128 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>Portfolio</title>
-      <script src="../lib/jquery/jquery-3.4.1.min.js"></script>
-      <script src="../lib/bootstrap-4.4.1/js/bootstrap.min.js"></script>
-      <link rel="stylesheet" href="../lib/bootstrap-4.4.1/css/bootstrap.min.css">
-      <link rel="stylesheet" href="../css/style.css">
-  </head>
-  <body>
-      <div id="particles-js"></div>
-
-      <div class="d-flex align-items-start" style="background-color: rgba(255, 255, 255, 0.781); border-bottom: solid 0.5px rgba(77, 77, 77, 0.1);">
-        
-        <div class="content container-xl d-flex flex-column justify-content-between">
-          
-        <nav class="navbar navbar-expand-sm navbar-light">
-          <button class="navbar-toggler ml-auto text-center" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            menu <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mt-4">
-              <li class="nav-item">
-                <a class="nav-link text-primary" href="../index.html">Top</a>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Simulations</title>
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>
+        <div id="particles-js" style="position: absolute;"></div>
+        <div class="overlay-pages">
+          <div class="header">
+            <ul class="nav">
+              <li>
+                <a href="../index.html">Top</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link text-primary" href="../profile.html">Profile</a>
+              <li>
+                <a href="../profile.html">Profile</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link text-primary" href="../software.html">Software</a>
+              <li>
+                <a href="../software.html">Software</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="simulations/index.html">Simulations</a>
+              <li>
+                <span class="disabled">Simulations</span>
               </li>
-              <li class="nav-item">
-                <a class="nav-link text-primary" href="../memo.html">備忘録</a>
+              <li>
+                <a href="../memo.html">備忘録</a>
               </li>
             </ul>
+            <span class="title">Simulations</span>
           </div>
-        </nav>
-
-
-          <div class="d-flex flex-wrap flex-row align-items-start">
-            <h1 class="display-3 mt-2 mb-4">Simulations</h1>
-
-            <div class="d-flex flex-wrap flex-row justify-content-around container-xl">
-
-              <div class="card border-info mb-2" style="width: 250px;">
-                <img src="../img/epidemic_simulation.png" class="card-img-top img-fluid">
-                <div class="card-body">
-                  <h5 class="card-title" style="font-weight: bold;"><a href="https://stellacontrail.github.io/epidemic-simulator/index.html">Epidemic Simulator</a></h5>
-                  <p class="card-text">Simulate how a virus outbreak occurs</p>
-                </div>
+        </div>
+        <div class="content">
+          <div class="cards">
+            <div class="card">
+              <a href="https://stellacontrail.github.io/epidemic-simulator/index.html"></a>
+              <div class="card-img">
+                <img src="img/epidemic_simulation.png">
               </div>
-              
-              <div class="card border-info mb-2" style="width: 250px;">
-                <img src="../img/collision.png" class="card-img-top img-fluid">
-                <div class="card-body">
-                  <h5 class="card-title" style="font-weight: bold;"><a href="https://github.com/StellaContrail/CollisionOfBlocks">Calculate PI</a></h5>
-                  <p class="card-text">Count collisions of blocks to calculate PI = 3.141592...</p>
-                </div>
+              <div class="card-content">
+                <span class="card-title">Epidemic Simulator</span>
+                <p class="card-body">Simulate how virus outbreaks.</p>
               </div>
+            </div>
 
-              <div class="card border-info mb-2" style="width: 250px;">
-                <img src="../img/magnet.png" class="card-img-top img-fluid">
-                <div class="card-body">
-                  <h5 class="card-title" style="font-weight: bold;"><a href="https://github.com/StellaContrail/IsingModel">Magnetization</a></h5>
-                  <p class="card-text">Study magnetization property of ferromagnetic materials using 2D/3D Ising model and XY model.</p>
-                </div>
+            <div class="card">
+              <a href="https://github.com/StellaContrail/CollisionOfBlocks"></a>
+              <div class="card-img">
+                <img src="img/collision.png">
               </div>
-              
-              <div class="card border-info mb-2" style="width: 250px;">
-                <img src="../img/double_pendulum.gif" class="card-img-top img-fluid">
-                <div class="card-body">
-                  <h5 class="card-title" style="font-weight: bold;"><a href="https://github.com/StellaContrail/doublependulum">Double Pendulum</a></h5>
-                  <p class="card-text">Dynamics of double pendulum: Chaotic movement</p>
-                </div>
+              <div class="card-content">
+                <span class="card-title">Calculate PI</span>
+                <p class="card-body">Count block collisions to calculate PI = 3.141592...</p>
               </div>
-              
-              <div class="card border-info mb-2" style="width: 250px;">
-                <img src="../img/tunneling.gif" class="card-img-top img-fluid">
-                <div class="card-body">
-                  <h5 class="card-title" style="font-weight: bold;"><a href="https://github.com/StellaContrail/wave-function">Quantum Mechanics</a></h5>
-                  <p class="card-text">Simulate "smallest thing" in the world: First Principle Calculations of Quantum Mechanics</p>
-                </div>
-              </div>
+            </div>
 
-              <div class="card border-info mb-2" style="width: 250px;">
-                <img src="img/brown.png" class="card-img-top img-fluid">
-                <div class="card-body">
-                  <h5 class="card-title" style="font-weight: bold;"><a href="brownian_motion/index.html">Brownian Motion</a></h5>
-                  <p class="card-text">
-                    Simulation of Brownian motion
-                  </p>
-                </div>
+            <div class="card">
+              <a href="https://github.com/StellaContrail/IsingModel"></a>
+              <div class="card-img">
+                <img src="img/magnet.png">
               </div>
-
-              <div class="card border-info mb-2" style="width: 250px;">
-                <img src="img/deformed.png" class="card-img-top img-fluid">
-                <div class="card-body">
-                  <h5 class="card-title" style="font-weight: bold;"><a href="deformed_nucleus/general.html">Deformed nucleus shape (2D)</a></h5>
-                  <p class="card-text">
-                    Deformed nucleus in 2D
-                  </p>
-                </div>
+              <div class="card-content">
+                <span class="card-title">Magnetization</span>
+                <p class="card-body">Simulate ferromagnetic properties by Ising/XY model.</p>
               </div>
-
-              <div class="card border-info mb-2" style="width: 250px;">
-                <img src="img/hill_wheeler.png" class="card-img-top img-fluid">
-                <div class="card-body">
-                  <h5 class="card-title" style="font-weight: bold;"><a href="deformed_nucleus/hill_wheeler.html">Deformed nucleus shape (3D)</a></h5>
-                  <p class="card-text">
-                    Deformed nucleus expressed with Hill-Wheeler coordinates
-                  </p>
-                </div>
+            </div>
+        
+            <div class="card">
+              <a href="https://github.com/StellaContrail/doublependulum"></a>
+              <div class="card-img">
+                <img src="img/double_pendulum.gif">
               </div>
-
-              <div class="card border-info mb-2" style="width: 250px;">
-                <img src="../img/quon_code.png" class="card-img-top img-fluid">
-                <div class="card-body">
-                  <h5 class="card-title" style="font-weight: bold;">QM Library</h5>
-                  <p class="card-text">
-                    C++ Library for first principle calculation.
-                  </p>
-                </div>
+              <div class="card-content">
+                <span class="card-title">Double Pendulum</span>
+                <p class="card-body">Dynamics of double pendulum</p>
               </div>
+            </div>
 
+            <div class="card">
+              <a href="https://github.com/StellaContrail/wave-function"></a>
+              <div class="card-img">
+                <img src="img/tunneling.gif">
+              </div>
+              <div class="card-content">
+                <span class="card-title">Quantum Mechanics</span>
+                <p class="card-body">Simulate smallest things in the universe</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <a href="brownian_motion/index.html"></a>
+              <div class="card-img">
+                <img src="img/brown.png">
+              </div>
+              <div class="card-content">
+                <span class="card-title">Brownian Motion</span>
+                <p class="card-body">Simulate Brownian motion</p>
+              </div>
+            </div>
+        
+            <div class="card">
+              <a href="deformed_nucleus/general.html"></a>
+              <div class="card-img">
+                <img src="img/deformed.png">
+              </div>
+              <div class="card-content">
+                <span class="card-title">Deformed nucleus shape (2D)</span>
+                <p class="card-body">Deformed nucleus in 2D</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <a href="deformed_nucleus/hill_wheeler.html"></a>
+              <div class="card-img">
+                <img src="img/hill_wheeler.png">
+              </div>
+              <div class="card-content">
+                <span class="card-title">Deformed nucleus shape (3D)</span>
+                <p class="card-body">Deformed nucleus in Hill-Wheeler coordinates</p>
+              </div>
             </div>
           </div>
-
-          <div class="mb-5"></div>
         </div>
-
-    </div>
-
-      <script src="../lib/particlejs/particles.js"></script>
-      <script src="../lib/particlejs/app.js"></script>
-  </body>
+        
+        <script src="../lib/particlejs/particles.js"></script>
+        <script src="../lib/particlejs/app.js"></script>
+    </body>
 </html>

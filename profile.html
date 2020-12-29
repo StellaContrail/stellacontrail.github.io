@@ -3,73 +3,58 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Portfolio</title>
-        <script src="lib/jquery/jquery-3.4.1.min.js"></script>
-        <script src="lib/bootstrap-4.4.1/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="lib/bootstrap-4.4.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/style.css">
+        <title>Profile</title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div id="particles-js"></div>
+        <div id="particles-js" class="parent">
+          <div class="overlay-pages">
+            <div class="header">
+              <ul class="nav">
+                <li>
+                  <a href="index.html">Top</a>
+                </li>
+                <li>
+                  <span class="disabled">Profile</span>
+                </li>
+                <li>
+                  <a href="software.html">Software</a>
+                </li>
+                <li>
+                  <a href="simulations/index.html">Simulations</a>
+                </li>
+                <li>
+                  <a href="memo.html">備忘録</a>
+                </li>
+              </ul>
+                <span class="title">Profile</span>
 
-        <div style="background-color: rgba(255, 255, 255, 0.781); border-bottom: solid 0.5px rgba(77, 77, 77, 0.1);">
-          
-          <div class="content container-xl d-flex flex-column justify-content-between">
-            
-            <nav class="navbar navbar-expand-sm navbar-light">
-              <button class="navbar-toggler ml-auto text-center" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                menu <span class="navbar-toggler-icon"></span>
-              </button>
-  
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mt-4">
-                  <li class="nav-item">
-                    <a class="nav-link text-primary" href="index.html">Top</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled" href="profile.html">Profile</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-primary" href="software.html">Software</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-primary" href="simulations/index.html">Simulations</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-primary" href="memo.html">備忘録</a>
-                  </li>
-                </ul>
+                <div class="content-profile">
+                  <img src="https://avatars3.githubusercontent.com/u/30793677" width="256px" style="box-shadow: 3px 5px 5px 3px rgb(233, 233, 233);">
+
+                  <table class="profile-table">
+                    <tr>
+                      <td colspan="2" class="smaller-title">Contrail</td>
+                    </tr>
+                    <tr>
+                      <td class="label">Field</td>
+                      <td>Computational Physics</td>
+                    </tr>
+                    <tr>
+                      <td class="label">Degree</td>
+                      <td>B.Sc (Physics)</td>
+                    </tr>
+                    <tr>
+                      <td class="label">Language</td>
+                      <td>JP/EN/DE/C#/Fortran/C++</td>
+                    </tr>
+                  </table>
+                </div>
+
               </div>
-            </nav>
-
-
-            <div class="d-flex flex-row flex-wrap align-items-end justify-content-between">
-              <div class="ml-4">
-                <h1 class="display-3 mb-2">Profile</h1>
-                <img src="https://avatars3.githubusercontent.com/u/30793677" class="ml-3 mb-4">
-                <p class="lead">
-                  <span class="font-weight-bold">Degree:</span> B.Sc (Physics)
-                  <br>
-                  <span class="font-weight-bold">Field:</span> Computational Physics
-                  <br>
-                  <span class="font-weight-bold">Language:</span> JP/English/C#/Fortran2008/C++
-                </p>
-              </div>
-              
-              <figure style="text-align: right; color: rgb(75, 75, 75);">
-                <video loop autoplay="true" class="img-fluid" poster="img/wave.gif">
-                  <source src="img/wave.webm" type="video/webm">
-                </video>
-                <figcaption class="mr-5">
-                  (fig. 3D Wave Dynamics)
-                </figcaption>
-              </figure>
             </div>
-
-            <div class="mb-5"></div>
-          </div>
         </div>
-
+        
         <script src="lib/particlejs/particles.js"></script>
         <script src="lib/particlejs/app.js"></script>
     </body>

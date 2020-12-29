@@ -1,8 +1,0 @@
-canvas {
-    position: fixed;
-    z-index: -1;
-}
-
-::selection {
-    background: #b3d4fc;
-}

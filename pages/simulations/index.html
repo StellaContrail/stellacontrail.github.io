@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Simulations</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <style>
+          body {
+            font-family: "Segoe UI", sans-serif;
+          }
+          .container-fluid {
+            max-width: 720px;
+          }
+        </style>
+    </head>
+    <body>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav my-2 mb-lg-0 grid gap-3">
+              <li class="nav-item">
+                <a class="nav-link link-primary" href="../../index.html">Top</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link link-primary" href="../tools.html">Tools</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="simulations/index.html">Simulations</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link link-primary" href="memo.html">備忘録</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container-fluid">
+        <h1 class="display-5 ps-3"># Simulations</h1>
+        <hr>
+        <p>
+          これまでに作ったシミュレーションとかのまとめ。
+        </p>
+        
+        <div class="grid gap-0 row-gap-3">
+          <div>
+            <h3><a class="link-underline link-underline-opacity-0" href="https://stellacontrail.github.io/epidemic-simulator/index.html">Epidemic Simulator</a></h3>
+            <img class="img-fluid img-thumbnail" src="img/epidemic_simulation.png" style="max-width: 250px; max-height: 135px;">
+            <p>
+              感染症が人を媒介してどのように広まるかを可視化した簡易モデル。
+            </p>
+          </div>
+
+          <div>
+            <h3><a class="link-underline link-underline-opacity-0" href="https://github.com/StellaContrail/CollisionOfBlocks">円周率プール</a></h3>
+            <img class="img-fluid img-thumbnail" src="img/collision.png" style="max-width: 250px; max-height: 135px;">
+            <p>
+              <a class="text-decoration-none" href="https://www.maths.tcd.ie/~lebed/Galperin.%20Playing%20pool%20with%20pi.pdf">G.Galperin (2003)</a> の "Playing Pool with PI" を可視化したもの。
+              比重が異なる２つの積み木を弾性衝突させることで円周率を任意の桁数まで算出することが出来る。
+            </p>
+          </div>
+
+          <div>
+            <h3><a class="link-underline link-underline-opacity-0" href="https://github.com/StellaContrail/IsingModel">Ising模型 / XY模型</a></h3>
+            <img class="img-fluid img-thumbnail" src="img/magnet.png" style="max-width: 250px;">
+            <p>
+              モンテカルロ法を用いた２次元および３次元のイジング模型シミュレーション。
+              スピンが任意の角度を向くXY模型も実装している。
+            </p>
+          </div>
+
+          <div>
+            <h3><a class="link-underline link-underline-opacity-0" href="https://github.com/StellaContrail/doublependulum">２重振り子</a></h3>
+            <img class="img-fluid img-thumbnail" src="img/double_pendulum.gif" style="max-width: 250px;">
+            <p>
+              ２つの振り子が連結している２重振り子のシミュレーション。
+              カオス運動の一例。
+            </p>
+          </div>
+
+          <div>
+            <h3><a class="link-underline link-underline-opacity-0" href="https://github.com/StellaContrail/wave-function">量子力学あれこれ</a></h3>
+            <img class="img-fluid img-thumbnail" src="img/tunneling.gif" style="max-width: 250px;">
+            <p>
+              トンネル効果を始めとした量子力学的現象のシミュレーションを集めたリポジトリ。
+              主にシュレディンガー方程式を有限差分法で解いているだけなので初学者向け。
+            </p>
+          </div>
+
+          <div>
+            <h3><a class="link-underline link-underline-opacity-0" href="brownian_motion/index.html">ブラウン運動</a></h3>
+            <img class="img-fluid img-thumbnail" src="img/brown.png" style="max-width: 250px;">
+            <p>
+              ランジュバン方程式によるブラウン運動のシミュレーション。
+            </p>
+          </div>
+
+          <div>
+            <h3><a class="link-underline link-underline-opacity-0" href="deformed_nucleus/general.html">２次元 変形原子核</a></h3>
+            <img class="img-fluid img-thumbnail" src="img/deformed.png" style="max-width: 250px;">
+            <p>
+              変形原子核の２次元射影。
+            </p>
+          </div>
+
+          <div>
+            <h3><a class="link-underline link-underline-opacity-0" href="deformed_nucleus/hill_wheeler.html">３次元 変形原子核</a></h3>
+            <img class="img-fluid img-thumbnail" src="img/hill_wheeler.png" style="max-width: 250px;">
+            <p>
+              Hill-Wheeler方程式を用いた変形原子核の３次元プロット。
+            </p>
+          </div>
+          
+        </div>
+      </div>
+      
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    </body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Tools</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <style>
+          body {
+            font-family: "Segoe UI", sans-serif;
+          }
+          .container-fluid {
+            max-width: 720px;
+          }
+        </style>
+    </head>
+    <body>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav my-2 mb-lg-0 grid gap-3">
+              <li class="nav-item">
+                <a class="nav-link link-primary" href="../index.html">Top</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="./tools.html">Tools</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link link-primary" href="./simulations/index.html">Simulations</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link link-primary" href="memo.html">備忘録</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container-fluid">
+        <h1 class="display-5 ps-3"># Tools</h1>
+        <hr>
+        <p>
+          これまでに作ったツールとかのまとめ。
+        </p>
+        
+        <div class="grid gap-0 row-gap-3">
+          <div>
+            <h3>Amazon Price Recorder</h3>
+            <img class="img-fluid img-thumbnail" src="img/amazon.png" style="max-width: 250px; max-height: 135px;">
+            <p>
+              Amazonに出品されている商品の価格変動を記録するツール。
+              価格が設定した閾値を下回った時にメール通知する機能付。
+              ウェブスクレイピングの明示的な禁止ルール策定により開発停止。
+            </p>
+          </div>
+
+          <div>
+            <h3><a class="link-underline link-underline-opacity-0" href="https://github.com/StellaContrail/GIFPlayer">GIFPlayer</a></h3>
+            <img class="img-fluid img-thumbnail" src="https://raw.githubusercontent.com/StellaContrail/GIFPlayer/master/images/sample.png" style="max-width: 250px; max-height: 135px;">
+            <p>
+              GIF画像をコマ送り出来る再生プレイヤー。
+              表示しているフレームの画像だけ保存したり出来る。
+              メモリに全フレーム情報を保存することによって高速なコマ送りが可能に。
+            </p>
+          </div>
+
+          <div>
+            <h3><a class="link-underline link-underline-opacity-0" href="https://github.com/StellaContrail/comiket-participants-finder">コミケ参加者を一挙検索するやつ</a></h3>
+            <img class="img-fluid img-thumbnail" src="img/comiket.png" style="max-width: 250px;">
+            <p>
+              Twitterのフォロー覧からコミケに参加する人を抽出し、どこのブースでいつ販売しているのかを一覧化するツール。
+              Twitter APIの有料化に伴い開発停止。
+            </p>
+          </div>
+
+          <div>
+            <h3><a class="link-underline link-underline-opacity-0" href="https://github.com/StellaContrail/beatstream-like-game">BeatStreamっぽい音ゲー</a></h3>
+            <img class="img-fluid img-thumbnail" src="img/beatstream.gif" style="max-width: 250px;">
+            <p>
+              画面の左右上下からノーツが降ってくる音ゲー。Unityの勉強が目的だったが、割とその他のタイミング管理等々が難しかった。
+            </p>
+          </div>
+          
+        </div>
+      </div>
+      
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    </body>
+</html>
